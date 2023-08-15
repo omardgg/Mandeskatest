@@ -12,9 +12,9 @@ class m230814_212954_create_perfil_table extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('perfil', [
+       $this->createTable('perfil', [
             'id' => $this->primaryKey(),
-            'cliente_id' => $this->integer()->notNull(),
+            'client_id' => $this->integer()->notNull(),
             'descripcion' => $this->text(),
             'fecha_creacion' => $this->date(),
         ]);
@@ -22,7 +22,7 @@ class m230814_212954_create_perfil_table extends Migration
         $this->addForeignKey(
             'fk-perfil-client',
             'perfil',
-            'cliente_id',
+            'client_id',
             'client', // Nombre de la tabla relacionada
             'id', // Columna en la tabla relacionada
             'CASCADE'
@@ -34,7 +34,6 @@ class m230814_212954_create_perfil_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropForeignKey('fk-perfil-client', 'perfil');
-        $this->dropTable('perfil');
+        $this->dropTable('{{%perfil}}');
     }
 }
