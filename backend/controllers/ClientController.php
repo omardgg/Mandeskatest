@@ -2,8 +2,8 @@
 
 namespace backend\controllers;
 
-use app\models\Client;
-use app\models\ClientSearch;
+use backend\models\Client;
+use backend\models\ClientSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
